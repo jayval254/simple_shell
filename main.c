@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * main - beginning of program
- * @argc: arguments 
+ * @argc: arguments
  * @argv: arguments vector
  * Return: Always 0 on success
  */

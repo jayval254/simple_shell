@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 /**
  * rm_newline - Removes the new line from User's input
  * @line: the line input by user
