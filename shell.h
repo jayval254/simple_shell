@@ -9,65 +9,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-/* Macros */
-#define TRUE 1
-#define FALSE 0
-#define BUFSIZE 1024
-/* Global Variables */
+#include <dirent.h>
+#include <signal.h>
+
 extern char **environ;
-/**
- * struct builtin_t - Structure for builtin commands
- * @cmd: the command's name
- * @f: function to act on command
- */
-typedef struct builtin_t
-{
-	char *cmd;
-	int (*f)(char **, int, char *);
 
-} builtin_t;
-
-/*----------//My Function Prototypes\\----------*/
-/* In executor.c */
-int execute(char **cmd, char *filename);
-
-/* In prompt.c */
-void init_prompt(void);
-
-/* In parser.c */
-char *rm_newline(char *line);
-char **parse_input(char *line);
-char *build_path(char *token, char *value);
-int check_cmd_path(char **cmd);
-
-/* In string.c */
-int _strlen(const char *s);
+void sighandler(int);
+char *validator_getline(void);
+int _memory(char *buff);
+int _memory1(char *buff);
+char **function_strtok(char *buff, int pointer);
+void exit1(char *buffer, char **commands);
+int env1(char *buff, char **commands);
+char *_getenv(char *stri);
+char *_strcpy(char *dest, char *src);
+char *_strdup(char *str);
 char *_strstr(char *haystack, char *needle);
-char *_strcpy(char *dest, const char *src);
-char *_strcat(char *dest, const char *src);
 int _strcmp(char *s1, char *s2);
-
-/* In getenv.c */
-char *_getenv(const char *name);
-
-/* In printers.c */
-int _putchar(int c);
-int print(char *str);
-
-/* In utils.c */
-void free_memory_p(char *);
-void free_memory_pp(char **);
-int cmp(const char *s1, const char *s2);
-int _atoi(char *s);
-int _isalpha(char c);
-
-/* In more_string.c */
-char *_strdup(char *s);
-
-/* In builtins.c */
-int exit_cmd(char **, int, char *);
-int env_cmd(char **, int, char *);
-builtin_t is_builtin(char *cmd);
-int (*check_builtins(char **))(char **, int, char *);
+char *get_path(char *command);
+char *_strcat(char *dest, char *src);
+int _strlen(char *s);
+char *found_function(char **folder, char *command);
+void function_fork(char *buffer, char **command, char **argv, int count);
+char *_itoa(int number);
+int *_perror(char *argv, char *str, char *command);
 
 #endif
