@@ -65,9 +65,5 @@ int _atoi(char *s)
 		output = result;
 	return (output);
 }
-~
-~
-~
-~
 -- INSERT --                                                             24,2-9        All
 
