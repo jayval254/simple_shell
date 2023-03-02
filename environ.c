@@ -1,7 +1,8 @@
 #include "shell.h"
+#include <unistd.h>
 /**
  * _myenv - prints the current environment
- * @info: Structure containing potential arguments. 
+ * @info: Structure containing potential arguments
  * Return: Always 0
  */
 int _myenv(info_t *info)
@@ -72,9 +73,10 @@ int _myunsetenv(info_t *info)
 
 /**
  * populate_env_list - populates env linked list
- * @info: Structure containing potential arguments. 
+ * @info: Structure containing potential arguments
  * Return: Always 0
  */
+extern char **environ;
 int populate_env_list(info_t *info)
 {
 	list_t *node = NULL;
